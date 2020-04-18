@@ -64,6 +64,12 @@ public class WindGeneratorScript : MonoBehaviour
                 position = new Vector3(position.x + (newWindPrefab.transform.localScale.x/2) + positionOffSet.x, position.y, 0);
                 speed = new Vector2(-windSpeed, 0);
                 windWidth = new Vector3(windSize, 60, 1);
+
+                foreach (Transform anim in newWindPrefab.transform)
+                {
+                    anim.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+                    anim.localScale = new Vector3(0.01f, -0.02f, 1);
+                }
             }
             else if (directionNum == 1)
             {
@@ -76,12 +82,24 @@ public class WindGeneratorScript : MonoBehaviour
                 position = new Vector3(position.x, position.y + (newWindPrefab.transform.localScale.y / 2) + positionOffSet.y, 0);
                 speed = new Vector2(0, -windSpeed);
                 windWidth = new Vector3(100, windSize, 1);
+
+                foreach (Transform anim in newWindPrefab.transform)
+                {
+                    anim.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
+                    anim.localScale = new Vector3(0.02f, 0.01f, 1);
+                }
             }
             else if (directionNum == 3)
             {
                 position = new Vector3(position.x, position.y - (newWindPrefab.transform.localScale.y / 2) - positionOffSet.y, 0);
                 speed = new Vector2(0, windSpeed);
                 windWidth = new Vector3(100, windSize, 1);
+                
+                foreach (Transform anim in newWindPrefab.transform)
+                {
+                    anim.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+                    anim.localScale = new Vector3(0.02f, 0.01f, 1);
+                }
             }
 
             // Assign position and scale
