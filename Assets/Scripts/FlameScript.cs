@@ -5,7 +5,6 @@ using UnityEngine;
 public class FlameScript : MonoBehaviour
 {
     public float enrollDistance = 0.5f;
-    
     public float power = 100f;
     
     public int minUnitProtect = 5;
@@ -36,6 +35,7 @@ public class FlameScript : MonoBehaviour
                 unit.transform.parent = transform.parent;
 
                 Transform nextPosition = null;
+
                 if (unit.unitType == GroupUnitScript.Type.TANK)
                 {
                     int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
