@@ -9,6 +9,8 @@ public class GroupScript : MonoBehaviour
     private float inputX;
     private float inputY;
 
+    private Vector2 lastDirection;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +29,34 @@ public class GroupScript : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Vector2 movement = Vector2.zero;
-        movement.x = inputX * speed;
-        movement.y = inputY * speed;
+        // Vector2 movement = Vector2.zero;
+        // movement.x = inputX * speed;
+        // movement.y = inputY * speed;
 
-        transform.Translate(movement);
+        // transform.Translate(movement);
+
+        Vector2 direction = new Vector2(
+            inputX,
+            inputY
+        ).normalized;
+
+        if (lastDirection != direction && lastDirection == Vector2.zero)
+        {
+            GroupUnitScript[] units = GameObject.FindObjectsOfType<GroupUnitScript>();
+
+            foreach (GroupUnitScript unit in units)
+            {
+                if (!unit.isEnrolled)
+                    continue;
+                
+                unit.waitMove = Random.Range(0.05f, 0.55f);
+            }
+        }
+
+        GameObject.FindGameObjectWithTag("Flamme").transform.Translate(direction * speed);
+        GameObject.FindGameObjectWithTag("Group").transform.Find("Group Positions").position = Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("Flamme").transform.position, 1f);
+
+        lastDirection = direction;
     }
 
     /// <summary>

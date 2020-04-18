@@ -30,6 +30,9 @@ public class GroupUnitScript : MonoBehaviour
     [HideInInspector]
     public bool isEnrolled = false;
 
+    [HideInInspector]
+    public float waitMove = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +53,14 @@ public class GroupUnitScript : MonoBehaviour
         {
             forceRepositionTimer = 0;
             forceReposition = false;
+        }
+
+        // Mouvement
+        waitMove -= Time.deltaTime;
+
+        if (waitMove < 0)
+        {
+            waitMove = 0;
         }
 
         // Attaque
@@ -118,9 +129,12 @@ public class GroupUnitScript : MonoBehaviour
 
         float lastDist = Vector3.Distance(transform.position, groupPoint.position);
 
-        transform.Translate(movement);
+        if (waitMove == 0)
+        {
+            transform.Translate(movement);
+        }
 
-        if (Vector3.Distance(transform.position, groupPoint.position) >= lastDist)
+        if (Vector3.Distance(transform.position, groupPoint.position) >= lastDist && waitMove == 0)
         {
             transform.position = groupPoint.position;
         }

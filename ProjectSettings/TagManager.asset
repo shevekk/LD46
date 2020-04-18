@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Group
   - Mob
+  - Flamme
   layers:
   - Default
   - TransparentFX
