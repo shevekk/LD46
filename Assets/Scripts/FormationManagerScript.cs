@@ -17,7 +17,7 @@ public class FormationManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ChangeFormation(activeGroup);
     }
 
     // Update is called once per frame
