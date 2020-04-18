@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4581792497171218671}
   - component: {fileID: 8594540637727789495}
   - component: {fileID: 434802520482477312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 8852902691330562144}
   - component: {fileID: 4954691626681906237}
   - component: {fileID: 3397176714855626533}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,8 @@ GameObject:
   - component: {fileID: 3765664610552578372}
   - component: {fileID: 57997133}
   - component: {fileID: 6033426285197477367}
-  m_Layer: 0
+  - component: {fileID: 1452385889101111535}
+  m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +269,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -300,7 +301,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: fbba9c2b8b28097499ef42841843ac85, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -320,6 +321,8 @@ MonoBehaviour:
   unitType: 0
   viewRange: 9
   attackRange: 0.5
+  isEnrolled: 0
+  waitMove: 0
 --- !u!114 &6033426285197477367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +337,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   healthBar: {fileID: 6312214209349715862}
+--- !u!114 &1452385889101111535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765664610552578371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 234565d5860e668468dc3fe43258a7dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7843368553063119649
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +361,7 @@ GameObject:
   - component: {fileID: 2766058978725197538}
   - component: {fileID: 1975464428536852309}
   - component: {fileID: 6312214209349715862}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6755325569086249670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
