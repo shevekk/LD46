@@ -402,6 +402,8 @@ MonoBehaviour:
   enrollDistance: 0.5
   power: 100
   minUnitProtect: 5
+  powerSlider: {fileID: 0}
+  powerText: {fileID: 0}
 --- !u!50 &4296229742521017289
 Rigidbody2D:
   serializedVersion: 4

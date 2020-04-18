@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FlameScript : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class FlameScript : MonoBehaviour
     public int minUnitProtect = 5;
     private WindScript wind;
 
+    public Slider powerSlider;
+    public Text powerText;
+
     void Awake()
     {
         instance = this;
@@ -21,11 +25,15 @@ public class FlameScript : MonoBehaviour
     void Start()
     {
         power = 100f;
+        powerText.text = ((int) power) + "%";
     }
 
     // Update is called once per frame
     void Update()
     {
+        powerSlider.value = power / 100f;
+        powerText.text = ((int) power) + "%";
+
         GroupUnitScript[] units = GameObject.FindObjectsOfType<GroupUnitScript>();
 
         foreach (GroupUnitScript unit in units)
