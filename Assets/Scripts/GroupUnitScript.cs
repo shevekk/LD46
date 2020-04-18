@@ -11,9 +11,8 @@ public class GroupUnitScript : MonoBehaviour
 
     private Transform groupPoint;
 
-    private float speed = 0.1f;
-
-    private SpriteRenderer spriteRenderer;
+    private float speed = 0.12f;
+    private Vector2 acceleration;
 
     public Type unitType;
 
@@ -28,23 +27,22 @@ public class GroupUnitScript : MonoBehaviour
     private float attackCounter;
     public float attackRange = 0.5f;
 
-    [HideInInspector]
     public bool isEnrolled = false;
 
     [HideInInspector]
     public float waitMove = 0f;
 
+    private Rigidbody2D body2D;
+
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        body2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        spriteRenderer.sortingOrder = (int)(transform.position.y * -1000);
-
         if (!isEnrolled)
             return;
 
@@ -95,17 +93,22 @@ public class GroupUnitScript : MonoBehaviour
 
         if (target)
         {
-            Vector3 targetDirection = (target.transform.position - transform.position).normalized;
-            Vector3 velocity = targetDirection * speed;
+            if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
+            {
+                body2D.MovePosition(Vector3.Lerp(transform.position, target.transform.position, 0.025f));
+            }
 
-            if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
-            {
-                transform.Translate(velocity);
-            }
-            else
-            {
+            // Vector3 targetDirection = (target.transform.position - transform.position).normalized;
+            // Vector3 velocity = targetDirection * speed;
+
+            // if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
+            // {
+            //     transform.Translate(velocity);
+            // }
+            // else
+            // {
                 
-            }
+            // }
         }
 
         if (!target && unitType == Type.WARRIOR && !forceReposition)
@@ -125,95 +128,9 @@ public class GroupUnitScript : MonoBehaviour
         if (groupPoint == null || target)
             return;
         
-        // Target
-        if (target && Vector3.Distance(transform.position, target.transform.position) > viewRange)
-        {
-            target = null;
-        }
-
-        if (target)
-        {
-            Vector3 targetDirection = (target.transform.position - transform.position).normalized;
-            Vector3 velocity = targetDirection * speed;
-
-            if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
-            {
-                transform.Translate(velocity);
-            }
-            else
-            {
-                
-            }
-        }
-
-        if (!target && unitType == Type.WARRIOR && !forceReposition)
-        {
-            MobScript[] mobs = GameObject.FindObjectsOfType<MobScript>();
-
-            foreach (MobScript mob in mobs)
-            {
-                if (Vector3.Distance(transform.position, mob.transform.position) <= viewRange)
-                {
-                    target = mob.gameObject;
-                }
-            }
-        }   
-
-        // Formation
-        if (groupPoint == null || target)
-            return;
-        
-        // Target
-        if (target && Vector3.Distance(transform.position, target.transform.position) > viewRange)
-        {
-            target = null;
-        }
-
-        if (target)
-        {
-            Vector3 targetDirection = (target.transform.position - transform.position).normalized;
-            Vector3 velocity = targetDirection * speed;
-
-            if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
-            {
-                transform.Translate(velocity);
-            }
-            else
-            {
-                
-            }
-        }
-
-        if (!target && unitType == Type.WARRIOR && !forceReposition)
-        {
-            MobScript[] mobs = GameObject.FindObjectsOfType<MobScript>();
-
-            foreach (MobScript mob in mobs)
-            {
-                if (Vector3.Distance(transform.position, mob.transform.position) <= viewRange)
-                {
-                    target = mob.gameObject;
-                }
-            }
-        }   
-
-        // Formation
-        if (groupPoint == null || target)
-            return;
-
-        Vector3 direction = (groupPoint.position - transform.position).normalized;
-        Vector2 movement = direction * speed;
-
-        float lastDist = Vector3.Distance(transform.position, groupPoint.position);
-
         if (waitMove == 0)
         {
-            transform.Translate(movement);
-        }
-
-        if (Vector3.Distance(transform.position, groupPoint.position) >= lastDist && waitMove == 0)
-        {
-            transform.position = groupPoint.position;
+            body2D.MovePosition(Vector3.Lerp(transform.position, groupPoint.position, 0.1f));
         }
     }
 

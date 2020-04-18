@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 119775685}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 818763173}
   - component: {fileID: 818763172}
   - component: {fileID: 818763171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 1722788448}
   - component: {fileID: 1722788450}
   - component: {fileID: 1722788449}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 2029947084}
   - component: {fileID: 2029947083}
   - component: {fileID: 2029947082}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 1695541820}
   - component: {fileID: 1695541819}
   - component: {fileID: 6017239560134142713}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Skeleton
   m_TagString: Mob
   m_Icon: {fileID: 0}

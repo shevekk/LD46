@@ -62,14 +62,16 @@ public class MobScript : MonoBehaviour
             Vector3 direction = (target.transform.position - transform.position).normalized;
             Vector3 velocity = direction * speed;
 
-            if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
+            if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
-                body2D.velocity = velocity;
+                body2D.MovePosition(Vector3.Lerp(transform.position, target.transform.position, 0.025f));
+
+                // body2D.velocity = velocity;
             }
-            else
-            {
-                body2D.velocity = Vector3.zero;
-            }
+            // else
+            // {
+            //     body2D.velocity = Vector3.zero;
+            // }
         }
 
         if (target)
