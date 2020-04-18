@@ -6,9 +6,12 @@ public class FlameScript : MonoBehaviour
 {
     public float enrollDistance = 0.5f;
 
-    public float power;
 
+    public float power = 100f;
+    
+    public int minUnitProtect = 5;
     private WindScript wind;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +37,6 @@ public class FlameScript : MonoBehaviour
                 unit.transform.parent = transform.parent;
 
                 Transform nextPosition = null;
-
                 if (unit.unitType == GroupUnitScript.Type.TANK)
                 {
                     int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
@@ -57,30 +59,29 @@ public class FlameScript : MonoBehaviour
     {
         if(wind != null)
         {
-            // Check Formation
-            int minTanks = 5;
+            // Check If the Flame is protect
             int nbTanks = 0;
             ZoneProtectFlameScript.Direction wildDirection = ZoneProtectFlameScript.Direction.LEFT;
 
             if (wind.speed.x < 0)
             {
-                wildDirection = ZoneProtectFlameScript.Direction.LEFT;
+                wildDirection = ZoneProtectFlameScript.Direction.RIGHT;
             }
             else if (wind.speed.x > 0)
             {
-                wildDirection = ZoneProtectFlameScript.Direction.RIGHT;
+                wildDirection = ZoneProtectFlameScript.Direction.LEFT;
             }
             else if (wind.speed.y < 0)
             {
-                wildDirection = ZoneProtectFlameScript.Direction.LEFT;
+                wildDirection = ZoneProtectFlameScript.Direction.TOP;
             }
             else if (wind.speed.y > 0)
             {
-                wildDirection = ZoneProtectFlameScript.Direction.RIGHT;
+                wildDirection = ZoneProtectFlameScript.Direction.BOTTOM;
             }
 
-            //
-            ZoneProtectFlameScript[] zoneProtect = GetComponentsInParent<ZoneProtectFlameScript>();
+            // Verifie si des tanks sont présent dans la zone de protection
+            ZoneProtectFlameScript[] zoneProtect = GetComponentsInChildren<ZoneProtectFlameScript>();
             for(int i = 0; i < zoneProtect.Length; i++)
             {
                 if(zoneProtect[i].direction == wildDirection)
@@ -89,10 +90,15 @@ public class FlameScript : MonoBehaviour
                 }
             }
 
-            // 
-            if(nbTanks < minTanks)
+            Debug.Log("wildDirection : " + wildDirection);
+            Debug.Log("nbTanks : " + nbTanks);
+            Debug.Log("zoneProtect : " + zoneProtect.Length);
+
+            // Si pas asser de tank, perte de vie
+            if (nbTanks < minUnitProtect)
             {
                 power -= wind.force;
+
             }
         }
     }

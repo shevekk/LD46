@@ -9,6 +9,11 @@ public class FormationManagerScript : MonoBehaviour
 
     public GameObject activeGroup;
 
+    [HideInInspector]
+    public List<Transform> tankPositionsAvailables = new List<Transform>();
+    [HideInInspector]
+    public List<Transform> warriorPositionsAvailables = new List<Transform>();
+
     void Awake()
     {
         instance = this;
@@ -39,7 +44,7 @@ public class FormationManagerScript : MonoBehaviour
         }
 
         foreach (Transform child in activeGroup.transform.Find("Warrior").transform)
-        {
+        {  
             warriorPositions.Add(child);
         }
 
@@ -47,10 +52,13 @@ public class FormationManagerScript : MonoBehaviour
 
         foreach (GroupUnitScript unit in units)
         {
+            if (!unit.isEnrolled)
+                continue;
+            
             if (unit.unitType == GroupUnitScript.Type.TANK && tankPositions.Count == 0)
-                break;
+                continue;
             if (unit.unitType == GroupUnitScript.Type.WARRIOR && warriorPositions.Count == 0)
-                break;
+                continue;
             
             Transform randomPoint = null;
 
@@ -67,5 +75,8 @@ public class FormationManagerScript : MonoBehaviour
                 warriorPositions.Remove(randomPoint);
             }
         }
+
+        tankPositionsAvailables = tankPositions;
+        warriorPositionsAvailables = warriorPositions;
     }
 }

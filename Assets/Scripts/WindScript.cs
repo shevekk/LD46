@@ -39,12 +39,7 @@ public class WindScript : MonoBehaviour
     /// <param name="collision"></param>
     void OnCollisionEnter2D(Collision2D collision)
     {
-        GroupUnitScript group = collision.gameObject.GetComponent<GroupUnitScript>();
-        if (group != null)
-        {
-            Debug.Log("CollisionEnter");
 
-        }
     }
 
     /// <summary>
@@ -53,11 +48,7 @@ public class WindScript : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        GroupUnitScript group = collider.gameObject.GetComponent<GroupUnitScript>();
-        if (group != null)
-        {
-            Debug.Log("TriggerEnter");
-        }
+
     }
 
     /// <summary>
@@ -68,7 +59,4 @@ public class WindScript : MonoBehaviour
     {
 
     }
-
-    
-
 }
