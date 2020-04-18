@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GroupUnitScript : MonoBehaviour
 {
-    public enum Type {
+    public enum Type
+    {
         TANK, WARRIOR
     }
 
@@ -27,12 +28,12 @@ public class GroupUnitScript : MonoBehaviour
     {
         spriteRenderer.sortingOrder = (int)(transform.position.y * -1000);
     }
-    
+
     void FixedUpdate()
     {
         if (groupPoint == null)
             return;
-        
+
         Vector3 direction = (groupPoint.position - transform.position).normalized;
         Vector2 movement = direction * speed;
 
@@ -48,4 +49,6 @@ public class GroupUnitScript : MonoBehaviour
     {
         groupPoint = point;
     }
+
+
 }
