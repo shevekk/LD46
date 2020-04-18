@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class FlameScript : MonoBehaviour
 {
+    public static FlameScript instance;
+
     public float enrollDistance = 0.5f;
     public float power = 100f;
     
     public int minUnitProtect = 5;
     private WindScript wind;
 
+    void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
