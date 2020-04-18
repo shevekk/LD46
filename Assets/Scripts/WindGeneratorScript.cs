@@ -52,7 +52,7 @@ public class WindGeneratorScript : MonoBehaviour
             int directionNum = Random.Range(0, 4);
 
             Vector3 windWidth = new Vector3(0, 0, 0);
-            Vector3 position = GameObject.FindObjectsOfType<GroupScript>()[0].transform.position;
+            Vector3 position = GameObject.FindObjectsOfType<FlameScript>()[0].transform.position;
             Vector2 speed = new Vector2(0, 0);
 
             //

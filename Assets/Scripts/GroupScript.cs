@@ -48,7 +48,7 @@ public class GroupScript : MonoBehaviour
             {
                 if (!unit.isEnrolled)
                     continue;
-                
+
                 unit.waitMove = Random.Range(0.05f, 0.55f);
             }
         }
@@ -56,10 +56,19 @@ public class GroupScript : MonoBehaviour
         // GameObject.FindGameObjectWithTag("Flamme").transform.Translate(direction * speed);
         // GameObject.FindGameObjectWithTag("Group").transform.Find("Group Positions").position = Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("Flamme").transform.position, 1f);
 
+
         Rigidbody2D flameBody = GameObject.FindGameObjectWithTag("Flamme").GetComponent<Rigidbody2D>();
         flameBody.velocity = direction * speed;
         //GameObject.FindGameObjectWithTag("Flamme").transform.Translate(direction * speed);
         GameObject.FindGameObjectWithTag("Group").transform.Find("Group Positions").position = Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("Flamme").transform.position, 1f);
+
+        // Move flame protection collider
+        ZoneProtectFlameScript[] zoneProtectFlameScript = GameObject.FindGameObjectWithTag("Flamme").GetComponentsInChildren<ZoneProtectFlameScript>();
+        for(int i = 0; i < zoneProtectFlameScript.Length; i++)
+        {
+            //zoneProtectFlameScript[i].transform.position = new Vector3(flameBody.position.x, flameBody.position.y, 0);
+            zoneProtectFlameScript[i].transform.position = transform.position;
+        }
 
         lastDirection = direction;
     }

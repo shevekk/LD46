@@ -103,9 +103,11 @@ public class FlameScript : MonoBehaviour
                 }
             }
 
+            /*
             Debug.Log("wildDirection : " + wildDirection);
             Debug.Log("nbTanks : " + nbTanks);
             Debug.Log("zoneProtect : " + zoneProtect.Length);
+            */
 
             // Si pas asser de tank, perte de vie
             if (nbTanks < minUnitProtect)

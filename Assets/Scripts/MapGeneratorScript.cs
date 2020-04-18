@@ -14,30 +14,41 @@ public class MapGeneratorScript : MonoBehaviour
     public int nbEnnemisMax;
     public List<Transform> ennemis;
 
+    public int nbHealsMin;
+    public int nbHealsMax;
+    public List<Transform> heal;
+
 
     // Start is called before the first frame update
     void Start()
     {
         initElement("UnitPosition", nbUnitMin, nbUnitMax, units);
         initElement("EnnemisPosition", nbEnnemisMin, nbEnnemisMax, ennemis);
+        initElement("HealPosition", nbHealsMin, nbHealsMax, heal);
     }
 
     public void initElement(string tag, int nbElementMin, int nbElementMax, List<Transform> prefabs)
     {
         // Generation Units
         GameObject[] obj = GameObject.FindGameObjectsWithTag(tag);
-        int nbUnit = Random.Range(nbElementMin, nbElementMax);
-        int nbPlacedUnit = 0;
+        int nbElement = Random.Range(nbElementMin, nbElementMax);
+        int nbPlacedElement = 0;
         List<int> occupedPositions = new List<int>();
 
+        if(nbElement > obj.Length)
+        {
+            nbElement = obj.Length;
+            Debug.Log("Problème de génération de l'élément " + tag + " nombre trop important d'éléments");
+        }
+
         // Check position valid
-        while (nbPlacedUnit < nbUnit)
+        while (nbPlacedElement < nbElement)
         {
             int numPosition = Random.Range(0, obj.Length);
 
             if (!occupedPositions.Contains(numPosition))
             {
-                nbPlacedUnit++;
+                nbPlacedElement++;
 
                 occupedPositions.Add(numPosition);
             }

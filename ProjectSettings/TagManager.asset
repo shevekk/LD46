@@ -7,6 +7,9 @@ TagManager:
   - Group
   - Mob
   - Flamme
+  - UnitPosition
+  - EnnemisPosition
+  - HealPosition
   layers:
   - Default
   - TransparentFX
