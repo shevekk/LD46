@@ -113,6 +113,44 @@ public class GroupUnitScript : MonoBehaviour
         // Formation
         if (groupPoint == null || target)
             return;
+        
+        // Target
+        if (target && Vector3.Distance(transform.position, target.transform.position) > viewRange)
+        {
+            target = null;
+        }
+
+        if (target)
+        {
+            Vector3 targetDirection = (target.transform.position - transform.position).normalized;
+            Vector3 velocity = targetDirection * speed;
+
+            if (Vector3.Distance(transform.position, target.transform.position) > 0.35f)
+            {
+                transform.Translate(velocity);
+            }
+            else
+            {
+                
+            }
+        }
+
+        if (!target && unitType == Type.WARRIOR && !forceReposition)
+        {
+            MobScript[] mobs = GameObject.FindObjectsOfType<MobScript>();
+
+            foreach (MobScript mob in mobs)
+            {
+                if (Vector3.Distance(transform.position, mob.transform.position) <= viewRange)
+                {
+                    target = mob.gameObject;
+                }
+            }
+        }   
+
+        // Formation
+        if (groupPoint == null || target)
+            return;
 
         Vector3 direction = (groupPoint.position - transform.position).normalized;
         Vector2 movement = direction * speed;
