@@ -47112,13 +47112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-<<<<<<< HEAD
-=======
     - target: {fileID: 1126095753, guid: 2f0cf0451d428ab4b8d546f6154a6ca1, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 609033106}
->>>>>>> master
     - target: {fileID: 4756010677656461332, guid: 2f0cf0451d428ab4b8d546f6154a6ca1,
         type: 3}
       propertyPath: m_LocalPosition.x
