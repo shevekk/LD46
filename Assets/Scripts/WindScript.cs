@@ -6,13 +6,14 @@ public class WindScript : MonoBehaviour
 {
     public Vector2 speed;
     public float force;
+    public float duration; // Temps avant supression
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Destroy(gameObject, duration); 
     }
 
     // Update is called once per frame
