@@ -7,13 +7,13 @@ public class WindScript : MonoBehaviour
     public Vector2 speed;
     public float force;
     public float duration; // Temps avant supression
+    public GameObject indicatorUI;
 
-    
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, duration); 
+        Destroy(gameObject, duration);
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class WindScript : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
-
+        //indicatorUI.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
     }
 
     /// <summary>
@@ -60,4 +60,14 @@ public class WindScript : MonoBehaviour
     {
 
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    void OnDestroy()
+    {
+        
+    }
+
+
 }

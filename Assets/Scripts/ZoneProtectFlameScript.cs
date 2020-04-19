@@ -34,7 +34,39 @@ public class ZoneProtectFlameScript : MonoBehaviour
         GroupUnitScript unit = collider.gameObject.GetComponent<GroupUnitScript>();
         if (unit != null)
         {
-            if(unit.unitType == GroupUnitScript.Type.TANK)
+            if (unit.unitType == GroupUnitScript.Type.TANK)
+            {
+                nbTanks++;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        GroupUnitScript unit = collision.gameObject.GetComponent<GroupUnitScript>();
+        if (unit != null)
+        {
+            if (unit.unitType == GroupUnitScript.Type.TANK)
+            {
+                nbTanks++;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnColliderEnter2D(Collider2D collider)
+    {
+        GroupUnitScript unit = collider.gameObject.GetComponent<GroupUnitScript>();
+        if (unit != null)
+        {
+            if (unit.unitType == GroupUnitScript.Type.TANK)
             {
                 nbTanks++;
             }
@@ -53,6 +85,38 @@ public class ZoneProtectFlameScript : MonoBehaviour
             if (unit.unitType == GroupUnitScript.Type.TANK)
             {
                 nbTanks--;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        GroupUnitScript unit = collider.gameObject.GetComponent<GroupUnitScript>();
+        if (unit != null)
+        {
+            if (unit.unitType == GroupUnitScript.Type.TANK)
+            {
+                nbTanks++;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnColliderStay2D(Collider2D collider)
+    {
+        GroupUnitScript unit = collider.gameObject.GetComponent<GroupUnitScript>();
+        if (unit != null)
+        {
+            if (unit.unitType == GroupUnitScript.Type.TANK)
+            {
+                nbTanks++;
             }
         }
     }

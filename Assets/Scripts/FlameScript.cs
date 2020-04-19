@@ -103,12 +103,6 @@ public class FlameScript : MonoBehaviour
                 }
             }
 
-            /*
-            Debug.Log("wildDirection : " + wildDirection);
-            Debug.Log("nbTanks : " + nbTanks);
-            Debug.Log("zoneProtect : " + zoneProtect.Length);
-            */
-
             // Si pas asser de tank, perte de vie
             if (nbTanks < minUnitProtect)
             {
@@ -141,6 +135,10 @@ public class FlameScript : MonoBehaviour
         WindScript wind = collider.gameObject.GetComponent<WindScript>();
         if (wind != null)
         {
+            if (this.wind.indicatorUI != null)
+            {
+                this.wind.indicatorUI.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
+            }
             this.wind = null;
         }
     }

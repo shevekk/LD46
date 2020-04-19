@@ -14,10 +14,18 @@ public class WindGeneratorScript : MonoBehaviour
 
     public float windSizeMax = 60f;
     public float windSizeMin = 20f;
-  
+
+    /// <summary>
+    /// Différentiel de position lors de la génération (plus grand = plus eloigner du joueur)
+    /// </summary>
+    public float positionOffSet = 200;
+
     public Transform windPrefab;
 
-
+    public GameObject leftIndicatorUI;
+    public GameObject rightIndicatorUI;
+    public GameObject topIndicatorUI;
+    public GameObject bottomIndicatorUI;
 
     private float elapsedTimeOverLastGenetion = 0;
 
@@ -37,8 +45,6 @@ public class WindGeneratorScript : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        Vector2 positionOffSet = new Vector2(50, 40);
-
         elapsedTimeOverLastGenetion++;
 
         float windSpeed = Random.Range(windSpeedMin, windSpeedMax);
@@ -58,10 +64,12 @@ public class WindGeneratorScript : MonoBehaviour
             //
             var newWindPrefab = Instantiate(windPrefab) as Transform;
 
+            GameObject indicatorUI = null;
+
             // Initialisation des paramètres selon la direction
             if (directionNum == 0)
             {
-                position = new Vector3(position.x + (newWindPrefab.transform.localScale.x/2) + positionOffSet.x, position.y, 0);
+                position = new Vector3(position.x + (windSize/2) + positionOffSet, position.y, 0);
                 speed = new Vector2(-windSpeed, 0);
                 windWidth = new Vector3(windSize, 60, 1);
 
@@ -70,16 +78,20 @@ public class WindGeneratorScript : MonoBehaviour
                     anim.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
                     anim.localScale = new Vector3(0.01f, -0.02f, 1);
                 }
+
+                indicatorUI = rightIndicatorUI;
             }
             else if (directionNum == 1)
             {
-                position = new Vector3(position.x - (newWindPrefab.transform.localScale.x / 2) - positionOffSet.x, position.y, 0);
+                position = new Vector3(position.x - (windSize / 2) - positionOffSet, position.y, 0);
                 speed = new Vector2(windSpeed, 0);
                 windWidth = new Vector3(windSize, 60, 1);
+
+                indicatorUI = leftIndicatorUI;
             }
             else if (directionNum == 2)
             {
-                position = new Vector3(position.x, position.y + (newWindPrefab.transform.localScale.y / 2) + positionOffSet.y, 0);
+                position = new Vector3(position.x, position.y + (windSize / 2) + positionOffSet, 0);
                 speed = new Vector2(0, -windSpeed);
                 windWidth = new Vector3(100, windSize, 1);
 
@@ -88,10 +100,12 @@ public class WindGeneratorScript : MonoBehaviour
                     anim.rotation = Quaternion.Euler(new Vector3(0, 0, -90));
                     anim.localScale = new Vector3(0.02f, 0.01f, 1);
                 }
+
+                indicatorUI = topIndicatorUI;
             }
             else if (directionNum == 3)
             {
-                position = new Vector3(position.x, position.y - (newWindPrefab.transform.localScale.y / 2) - positionOffSet.y, 0);
+                position = new Vector3(position.x, position.y - (windSize / 2) - positionOffSet, 0);
                 speed = new Vector2(0, windSpeed);
                 windWidth = new Vector3(100, windSize, 1);
                 
@@ -100,6 +114,8 @@ public class WindGeneratorScript : MonoBehaviour
                     anim.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
                     anim.localScale = new Vector3(0.02f, 0.01f, 1);
                 }
+
+                indicatorUI = bottomIndicatorUI;
             }
 
             // Assign position and scale
@@ -110,6 +126,10 @@ public class WindGeneratorScript : MonoBehaviour
             WindScript wind = newWindPrefab.GetComponent<WindScript>();
             wind.speed = speed;
             wind.force = Random.Range(windForceMin, windForceMax);
+            wind.indicatorUI = indicatorUI;
+
+            indicatorUI.GetComponent<UnityEngine.UI.Image>().color = Color.white;
+
         }
     }
 
