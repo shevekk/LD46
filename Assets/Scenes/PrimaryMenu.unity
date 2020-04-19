@@ -387,6 +387,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 120
       objectReference: {fileID: 0}
+    - target: {fileID: 1106178419, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106178419, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1106178419, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 760
+      objectReference: {fileID: 0}
+    - target: {fileID: 1201492361, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 1399312442, guid: 364983b14e537e6469144e27be005422, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -60
@@ -407,6 +423,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'Send your soldiers with swords on the front line to face the monsters
         and prevent them from killing your protectors and extinguishing the flame. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643827805, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1844737630, guid: 364983b14e537e6469144e27be005422, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -452,6 +472,11 @@ PrefabInstance:
         wind.
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951926963460388389, guid: 364983b14e537e6469144e27be005422,
+        type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951926963460388391, guid: 364983b14e537e6469144e27be005422,
         type: 3}
