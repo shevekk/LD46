@@ -42,7 +42,7 @@ public class NextRoomScript : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Flamme");
 
-        if (Vector2.Distance(transform.position, player.transform.position) <= 5f)
+        if (Vector2.Distance(transform.position, player.transform.position) <= 8f)
         {
             text.gameObject.SetActive(true);
         }
@@ -64,6 +64,8 @@ public class NextRoomScript : MonoBehaviour
             {
                 c.position = GameObject.Find("StartPosition").transform.position;
             }
+
+            FlameScript.instance.windGenerator.SetActive(true);
         }
     }
 }

@@ -18,6 +18,8 @@ public class FlameScript : MonoBehaviour
 
     public GameObject[] dontDestroy;
 
+    public GameObject windGenerator;
+
     void Awake()
     {
         instance = this;

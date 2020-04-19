@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 57997133}
   - component: {fileID: 6033426285197477367}
   - component: {fileID: 1452385889101111535}
+  - component: {fileID: 1942870833}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -349,6 +350,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234565d5860e668468dc3fe43258a7dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1942870833
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765664610552578371}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e77fd300ca083b849aaf3a802b5dec1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7843368553063119649
 GameObject:
   m_ObjectHideFlags: 0

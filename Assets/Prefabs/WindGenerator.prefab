@@ -9,15 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5885467526255922179}
-  - component: {fileID: 5885467526255922178}
   - component: {fileID: 5885467526255922189}
   m_Layer: 0
   m_Name: WindGenerator
-  m_TagString: Untagged
+  m_TagString: WindGenerator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5885467526255922179
 Transform:
   m_ObjectHideFlags: 0
@@ -32,22 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5885467526255922178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5885467526255922188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d24ca5bc8962634bb6da4ce61e76798, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  generationTime: 0
-  windForce: 0
-  windSpeed: {x: 0, y: 0}
-  windPrefab: {fileID: 0}
 --- !u!114 &5885467526255922189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   generationTime: 50
-  windForce: 5
-  windSpeed: {x: 0, y: -0.05}
-  windPrefab: {fileID: 5948911031666024934, guid: 058c1f69138cd384f9fa5476b6447b9a,
+  windForceMax: 0.1
+  windForceMin: 0.05
+  windSpeedMax: 0.8
+  windSpeedMin: 0.4
+  windSizeMax: 60
+  windSizeMin: 20
+  positionOffSet: 200
+  windPrefab: {fileID: 3712329481459963718, guid: 058c1f69138cd384f9fa5476b6447b9a,
     type: 3}
+  leftIndicatorUI: {fileID: 0}
+  rightIndicatorUI: {fileID: 0}
+  topIndicatorUI: {fileID: 0}
+  bottomIndicatorUI: {fileID: 0}
