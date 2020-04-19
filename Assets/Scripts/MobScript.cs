@@ -5,7 +5,9 @@ using UnityEngine;
 public class MobScript : MonoBehaviour
 {
     public enum Type {
-        SKELETON
+        SKELETON,
+        ZOMBIE,
+        GHOST
     }
 
     public Type mobType;
@@ -45,6 +47,20 @@ public class MobScript : MonoBehaviour
             {
                 health.Hurt(strength);
                 attackCounter = attackInterval;
+            }
+
+            FlameScript flameScript = target.GetComponent<FlameScript>();
+
+            if (flameScript)
+            {
+                flameScript.power -= strength;
+
+                if (flameScript.power < 0)
+                {
+                    flameScript.power = 0;
+                }
+
+                Destroy(gameObject);
             }
         }
     }
@@ -88,6 +104,23 @@ public class MobScript : MonoBehaviour
             {
                 target = unit.gameObject;
                 break;
+            }
+
+            if (mobType == Type.ZOMBIE && Vector3.Distance(transform.position, unit.transform.position) <= viewRange && unit.unitType == GroupUnitScript.Type.WARRIOR)
+            {
+                target = unit.gameObject;
+                break;
+            }
+
+            if (mobType == Type.GHOST)
+            {
+                GameObject flammeInstance = GameObject.FindGameObjectWithTag("Flamme");
+
+                if (mobType == Type.GHOST && Vector3.Distance(transform.position, flammeInstance.transform.position) <= viewRange)
+                {
+                    target = flammeInstance;
+                    break;
+                }
             }
         }
     }

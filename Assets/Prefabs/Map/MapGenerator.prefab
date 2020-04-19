@@ -53,6 +53,8 @@ MonoBehaviour:
   nbEnnemisMax: 5
   ennemis:
   - {fileID: 1684590889283880677, guid: 2ecb20467511be34da21adb7dde56cc8, type: 3}
+  - {fileID: 1675303973297766365, guid: 568d7fe912c958f408f068d2ab5114c0, type: 3}
+  - {fileID: 3411402591606556400, guid: 3413f9bffdf75384f833185cd0c5327c, type: 3}
   nbHealsMin: 1
   nbHealsMax: 1
   heal:
