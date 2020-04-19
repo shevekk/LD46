@@ -129,7 +129,6 @@ public class WindGeneratorScript : MonoBehaviour
             wind.indicatorUI = indicatorUI;
 
             indicatorUI.GetComponent<UnityEngine.UI.Image>().color = Color.white;
-
         }
     }
 

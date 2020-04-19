@@ -114,7 +114,7 @@ public class FlameScript : MonoBehaviour
             if (nbTanks < minUnitProtect)
             {
                 power -= wind.force;
-
+                SoundEffectsHelper.Instance.MakeLoseLifeSound();
             }
         }
     }

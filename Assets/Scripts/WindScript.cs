@@ -9,17 +9,24 @@ public class WindScript : MonoBehaviour
     public float duration; // Temps avant supression
     public GameObject indicatorUI;
 
+    private AudioSource windSound;
+
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, duration);
+
+        windSound = GetComponent<AudioSource>();
+        windSound.Play();
+        windSound.spatialize = true;
+        windSound.volume = 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     /// <summary>
@@ -50,6 +57,11 @@ public class WindScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         //indicatorUI.GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
+        FlameScript flame = collider.gameObject.GetComponent<FlameScript>();
+        if (flame != null)
+        {
+            windSound.volume = 1f;
+        }
     }
 
     /// <summary>
@@ -64,9 +76,23 @@ public class WindScript : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        FlameScript flame = collider.gameObject.GetComponent<FlameScript>();
+        if (flame != null)
+        {
+            //windSound.velocityUpdateMode = AudioVelocityUpdateMode.
+            windSound.volume = 0.3f;
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     void OnDestroy()
     {
-        
+        windSound.Stop();
     }
 
 
