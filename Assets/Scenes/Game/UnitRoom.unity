@@ -212,6 +212,7 @@ Transform:
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &133602083
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,6 +229,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &133602084
+
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,6 +244,7 @@ Transform:
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &259069724
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -258,6 +261,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &259069725
+
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -272,6 +276,7 @@ Transform:
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &285031773
+
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -279,6 +284,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 608368014}
     m_Modifications:
     - target: {fileID: 1699740236355197705, guid: 140df3c4ae1adda4e944b9fa184c5d00,
+
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8799999
@@ -1356,6 +1362,7 @@ Transform:
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1652836485
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1385,6 +1392,7 @@ Transform:
   m_Father: {fileID: 1450631983}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1001 &1662042751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1461,17 +1469,27 @@ PrefabInstance:
     - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
         type: 3}
       propertyPath: generationTime
-      value: 300
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
         type: 3}
       propertyPath: windSpeedMax
-      value: 0.3
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
         type: 3}
       propertyPath: windSpeedMin
-      value: 0.1
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
+        type: 3}
+      propertyPath: windSizeMax
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
+        type: 3}
+      propertyPath: windSizeMin
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5885467526255922178, guid: 7a1a3328868b7064dbdff392a4d7baa9, type: 3}
@@ -1537,6 +1555,7 @@ Transform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1831713755
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
