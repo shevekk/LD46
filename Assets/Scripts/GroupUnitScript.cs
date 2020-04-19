@@ -34,6 +34,9 @@ public class GroupUnitScript : MonoBehaviour
 
     private Rigidbody2D body2D;
 
+    private WindScript windCollision;
+    private Vector3 windDistance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,8 +101,17 @@ public class GroupUnitScript : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
+                Vector3 tPosition = target.transform.position;
+                float sp = 0.025f;
+
+                if (windCollision)
+                {
+                    tPosition += new Vector3(windCollision.speed.x, windCollision.speed.y, 0) * 900f;
+                    sp = 0.0001f;
+                }
+
                 GetComponent<Animator>().SetBool("isMoving", Vector2.Distance(transform.position, target.transform.position) > 0.35f);
-                body2D.MovePosition(Vector3.Lerp(transform.position, target.transform.position, 0.025f));
+                body2D.MovePosition(Vector3.Lerp(transform.position, tPosition, sp));
             }
 
             // Vector3 targetDirection = (target.transform.position - transform.position).normalized;
@@ -134,8 +146,17 @@ public class GroupUnitScript : MonoBehaviour
         
         if (waitMove == 0)
         {
-            GetComponent<Animator>().SetBool("isMoving", Vector2.Distance(transform.position, groupPoint.position) > 0.35f);
-            body2D.MovePosition(Vector3.Lerp(transform.position, groupPoint.position, 0.1f));
+            Vector3 tPosition = groupPoint.transform.position;
+            float sp = 0.05f;
+
+            if (windCollision)
+            {
+                tPosition += new Vector3(windCollision.speed.x, windCollision.speed.y, 0) * 900f;
+                sp = 0.0001f;
+            }
+
+            GetComponent<Animator>().SetBool("isMoving", Vector2.Distance(transform.position, tPosition) > 0.35f);
+            body2D.MovePosition(Vector3.Lerp(transform.position, tPosition, sp));
         }
     }
 
@@ -151,5 +172,24 @@ public class GroupUnitScript : MonoBehaviour
         target = null;
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        WindScript wind = other.GetComponent<WindScript>();
 
+        if (wind)
+        {
+            windCollision = wind;
+            windDistance = windCollision.transform.position - transform.position;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        WindScript wind = other.GetComponent<WindScript>();
+
+        if (wind)
+        {
+            windCollision = null;
+        }
+    }
 }
