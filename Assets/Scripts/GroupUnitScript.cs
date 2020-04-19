@@ -74,6 +74,7 @@ public class GroupUnitScript : MonoBehaviour
 
             if (health)
             {
+                SoundEffectsHelper.Instance.MakeDamageSound();
                 health.Hurt(1);
                 attackCounter = attackInterval;
                 GetComponent<Animator>().SetTrigger("attack");

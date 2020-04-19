@@ -62,6 +62,8 @@ public class HealPowerScript : MonoBehaviour
             {
                 animator.SetTrigger("off");
             }
+
+            SoundEffectsHelper.Instance.MakeGainLifeSound();
         }
     }
 }
