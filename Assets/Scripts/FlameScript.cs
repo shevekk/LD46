@@ -16,9 +16,16 @@ public class FlameScript : MonoBehaviour
     public Slider powerSlider;
     public Text powerText;
 
+    public GameObject[] dontDestroy;
+
     void Awake()
     {
         instance = this;
+
+        foreach (GameObject g in dontDestroy)
+        {
+            DontDestroyOnLoad(g);
+        }
     }
 
     // Start is called before the first frame update

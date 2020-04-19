@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Game/HealRoom.unity
+    guid: c6a51081076128f4198576b6aceb74d9
+  - enabled: 1
+    path: Assets/Scenes/Game/UnitRoom.unity
+    guid: 65f427dff5a2cdb4db42a34e18fda61a
   m_configObjects: {}
