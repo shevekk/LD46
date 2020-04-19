@@ -188,6 +188,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6870800550874615864, guid: 499c324a8c7d27f42a6e2fe61456cc3c,
+        type: 3}
+      propertyPath: nbEnnemisMax
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870800550874615864, guid: 499c324a8c7d27f42a6e2fe61456cc3c,
+        type: 3}
+      propertyPath: nbEnnemisMin
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6870800550874615866, guid: 499c324a8c7d27f42a6e2fe61456cc3c,
         type: 3}
       propertyPath: m_Name
