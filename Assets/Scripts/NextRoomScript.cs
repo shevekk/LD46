@@ -68,7 +68,12 @@ public class NextRoomScript : MonoBehaviour
         {
             string nextScene = (type == 0) ? unitScene : healScene;
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
-            other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
+            //other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
+            
+            foreach (Transform c in other.transform.parent.transform)
+            {
+                c.position = GameObject.Find("StartPosition").transform.position;
+            }
         }
     }
 }
