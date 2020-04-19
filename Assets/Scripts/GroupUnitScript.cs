@@ -76,6 +76,7 @@ public class GroupUnitScript : MonoBehaviour
             {
                 health.Hurt(1);
                 attackCounter = attackInterval;
+                GetComponent<Animator>().SetTrigger("attack");
             }
         }
     }
@@ -89,12 +90,14 @@ public class GroupUnitScript : MonoBehaviour
         if (target && Vector3.Distance(transform.position, target.transform.position) > viewRange)
         {
             target = null;
+            GetComponent<Animator>().SetBool("isMoving", false);
         }
 
         if (target)
         {
             if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
             {
+                GetComponent<Animator>().SetBool("isMoving", Vector2.Distance(transform.position, target.transform.position) > 0.35f);
                 body2D.MovePosition(Vector3.Lerp(transform.position, target.transform.position, 0.025f));
             }
 
@@ -130,6 +133,7 @@ public class GroupUnitScript : MonoBehaviour
         
         if (waitMove == 0)
         {
+            GetComponent<Animator>().SetBool("isMoving", Vector2.Distance(transform.position, groupPoint.position) > 0.35f);
             body2D.MovePosition(Vector3.Lerp(transform.position, groupPoint.position, 0.1f));
         }
     }

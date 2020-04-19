@@ -40,6 +40,15 @@ public class GroupScript : MonoBehaviour
             inputY
         ).normalized;
 
+        if (direction != Vector2.zero)
+        {
+            transform.Find("Flame").GetComponent<Animator>().SetBool("isMoving", true);
+        }
+        else
+        {
+            transform.Find("Flame").GetComponent<Animator>().SetBool("isMoving", false);
+        }
+
         if (lastDirection != direction && lastDirection == Vector2.zero)
         {
             GroupUnitScript[] units = GameObject.FindObjectsOfType<GroupUnitScript>();

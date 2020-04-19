@@ -54,16 +54,6 @@ public class NextRoomScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Flamme")
-        {
-            string nextScene = (type == 0) ? unitScene : healScene;
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
-            other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D other)
-    {
         if (other.gameObject.tag == "Flamme")
         {
             string nextScene = (type == 0) ? unitScene : healScene;
