@@ -57,7 +57,7 @@ public class NextRoomScript : MonoBehaviour
         if (other.tag == "Flamme")
         {
             string nextScene = (type == 0) ? unitScene : healScene;
-            SceneManager.LoadScene(nextScene);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
             other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
         }
     }
@@ -67,7 +67,7 @@ public class NextRoomScript : MonoBehaviour
         if (other.gameObject.tag == "Flamme")
         {
             string nextScene = (type == 0) ? unitScene : healScene;
-            SceneManager.LoadScene(nextScene);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
             other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
         }
     }
