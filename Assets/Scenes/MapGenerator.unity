@@ -3228,12 +3228,12 @@ PrefabInstance:
     - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
         type: 3}
       propertyPath: windForceMax
-      value: 1.1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
         type: 3}
       propertyPath: windForceMin
-      value: 1.05
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5885467526255922178, guid: 7a1a3328868b7064dbdff392a4d7baa9, type: 3}
