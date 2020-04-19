@@ -3225,6 +3225,16 @@ PrefabInstance:
       propertyPath: bottomIndicatorUI
       value: 
       objectReference: {fileID: 497767196}
+    - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
+        type: 3}
+      propertyPath: windForceMax
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885467526255922189, guid: 7a1a3328868b7064dbdff392a4d7baa9,
+        type: 3}
+      propertyPath: windForceMin
+      value: 1.05
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5885467526255922178, guid: 7a1a3328868b7064dbdff392a4d7baa9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7a1a3328868b7064dbdff392a4d7baa9, type: 3}

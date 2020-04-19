@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FlameScript : MonoBehaviour
@@ -110,6 +111,11 @@ public class FlameScript : MonoBehaviour
 
             }
         }
+
+        if(power <= 0)
+        {
+            GameOver();
+        }
     }
 
 
@@ -143,6 +149,10 @@ public class FlameScript : MonoBehaviour
         }
     }
 
-
+    private void GameOver()
+    {
+        // Open gameOver Scene + play sound
+        Application.LoadLevel("GameOver");
+    }
 
 }
