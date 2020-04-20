@@ -6,7 +6,7 @@ public class SceneManager : MonoBehaviour
 {
     public void Replay()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MapGenerator");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StartRoom");
     }
 
 }

@@ -41,6 +41,18 @@ public class FlameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (power <= 0)
+        {
+            foreach (GameObject o in FlameScript.instance.dontDestroy)
+            {
+                Destroy(o);
+            }
+            
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
+            
+            return;
+        }
+
         powerSlider.value = power / 100f;
         powerText.text = ((int) power) + "%";
 
