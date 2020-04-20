@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class NextRoomScript : MonoBehaviour
 {
     public Text text;
-    public string labelUnit = "Vers des unités";
-    public string labelHeal = "Vers une fontaine";
+    public string labelUnit = "Go to units room";
+    public string labelHeal = "Go to fountain room";
 
     public int type = 0;
 
