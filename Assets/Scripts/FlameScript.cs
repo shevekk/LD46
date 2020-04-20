@@ -21,6 +21,14 @@ public class FlameScript : MonoBehaviour
 
     public GameObject windGenerator;
 
+    public int maxWarrior = 10;
+    public int maxTanks = 10;
+
+    private int nbWarriors;
+    private int nbTanks;
+
+    public int endLevelIn = 5;
+
     void Awake()
     {
         instance = this;
@@ -53,6 +61,26 @@ public class FlameScript : MonoBehaviour
             return;
         }
 
+        GroupUnitScript[] unitsEnrolled = GameObject.FindObjectsOfType<GroupUnitScript>();
+
+        nbTanks = 0;
+        nbWarriors = 0;
+        
+        foreach (GroupUnitScript c in unitsEnrolled)
+        {
+            if (c.isEnrolled)
+            {
+                if (c.unitType == GroupUnitScript.Type.TANK)
+                {
+                    nbTanks ++;
+                }
+                else if (c.unitType == GroupUnitScript.Type.WARRIOR)
+                {
+                    nbWarriors ++;
+                }
+            }
+        }
+
         powerSlider.value = power / 100f;
         powerText.text = ((int) power) + "%";
 
@@ -67,23 +95,29 @@ public class FlameScript : MonoBehaviour
 
             if (distance <= enrollDistance)
             {
-                unit.isEnrolled = true;
-                unit.transform.parent = transform.parent;
-
-                Transform nextPosition = null;
-
-                if (unit.unitType == GroupUnitScript.Type.TANK)
+                if ((unit.unitType == GroupUnitScript.Type.TANK && nbTanks < maxTanks) ||
+                (unit.unitType == GroupUnitScript.Type.WARRIOR && nbWarriors < maxWarrior))
                 {
-                    int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
-                    unit.SetGroupPoint(FormationManagerScript.instance.tankPositionsAvailables[r]);
-                    FormationManagerScript.instance.tankPositionsAvailables.RemoveAt(r);
+                    unit.isEnrolled = true;
+                    unit.transform.parent = transform.parent;
 
-                }
-                else if (unit.unitType == GroupUnitScript.Type.WARRIOR)
-                {
-                    int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
-                    unit.SetGroupPoint(nextPosition = FormationManagerScript.instance.warriorPositionsAvailables[r]);
-                    FormationManagerScript.instance.warriorPositionsAvailables.RemoveAt(r);
+                    Transform nextPosition = null;
+
+                    if (unit.unitType == GroupUnitScript.Type.TANK)
+                    {
+                        int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
+                        unit.SetGroupPoint(FormationManagerScript.instance.tankPositionsAvailables[r]);
+                        FormationManagerScript.instance.tankPositionsAvailables.RemoveAt(r);
+                        nbTanks ++;
+
+                    }
+                    else if (unit.unitType == GroupUnitScript.Type.WARRIOR)
+                    {
+                        int r = Random.Range(0, FormationManagerScript.instance.tankPositionsAvailables.Count);
+                        unit.SetGroupPoint(nextPosition = FormationManagerScript.instance.warriorPositionsAvailables[r]);
+                        FormationManagerScript.instance.warriorPositionsAvailables.RemoveAt(r);
+                        nbWarriors ++;
+                    }
                 }
             }
         }
@@ -155,7 +189,7 @@ public class FlameScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collider)
     {
         WindScript wind = collider.gameObject.GetComponent<WindScript>();
-        if (wind != null)
+        if (this.wind != null)
         {
             if (this.wind.indicatorUI != null)
             {

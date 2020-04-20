@@ -410,6 +410,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   windGenerator: {fileID: 0}
+  maxWarrior: 10
+  maxTanks: 10
+  endLevelIn: 10
 --- !u!50 &4296229742521017289
 Rigidbody2D:
   serializedVersion: 4

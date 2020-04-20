@@ -180,11 +180,9 @@ MonoBehaviour:
   offObj: {fileID: 2416055094588385181}
   onObj: {fileID: 2416055093995573150}
   shortcutKey: 256
-  label: {fileID: 3977779088400623217}
+  txtLabel: {fileID: 3977779088400623217}
   labelBeforeKey: Press
   labelAfterKey: 
-  startFadeToEnd: 0
-  fadeCounter: 0
   fadePanel: {fileID: 2672017991804437748}
 --- !u!1 &2416055094588385181
 GameObject:

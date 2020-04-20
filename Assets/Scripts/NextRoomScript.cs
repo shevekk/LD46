@@ -10,6 +10,8 @@ public class NextRoomScript : MonoBehaviour
     public string labelUnit = "Go to units room";
     public string labelHeal = "Go to fountain room";
 
+    public string labelEnd = "Go to the hearth of Power";
+
     public int type = 0;
 
     public string healScene;
@@ -19,6 +21,11 @@ public class NextRoomScript : MonoBehaviour
     void Start()
     {
         type = Random.Range(0, 2);
+
+        if (FlameScript.instance.endLevelIn <= 0)
+        {
+            text.text = labelEnd;
+        }
 
         if (type == 0)
         {
@@ -57,6 +64,12 @@ public class NextRoomScript : MonoBehaviour
         if (other.gameObject.tag == "Flamme")
         {
             string nextScene = (type == 0) ? unitScene : healScene;
+            
+            if (FlameScript.instance.endLevelIn <= 0)
+            {
+                nextScene = "EndRoom";
+            }
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
             //other.gameObject.transform.position = GameObject.Find("StartPosition").transform.position;
             
@@ -73,6 +86,8 @@ public class NextRoomScript : MonoBehaviour
             {
                 windsUI[i].GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
             }
+
+            FlameScript.instance.endLevelIn --;
         }
     }
 }

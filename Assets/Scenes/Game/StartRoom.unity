@@ -814,6 +814,11 @@ PrefabInstance:
       propertyPath: windGenerator
       value: 
       objectReference: {fileID: 9111711689646966509}
+    - target: {fileID: 4296229742521017294, guid: e786dd0a1149ff04ba6b34a49f8893fe,
+        type: 3}
+      propertyPath: endLevelIn
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e786dd0a1149ff04ba6b34a49f8893fe, type: 3}
 --- !u!1001 &5288512141574338576
