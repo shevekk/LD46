@@ -66,6 +66,13 @@ public class NextRoomScript : MonoBehaviour
             }
 
             FlameScript.instance.windGenerator.SetActive(true);
+
+            // 
+            GameObject[] windsUI = GameObject.FindGameObjectsWithTag("WindUI");
+            for(int i = 0; i < windsUI.Length; i++)
+            {
+                windsUI[i].GetComponent<UnityEngine.UI.Image>().color = new Color(0, 0, 0, 0);
+            }
         }
     }
 }
