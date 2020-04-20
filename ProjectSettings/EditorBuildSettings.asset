@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/UnitRoom.unity
     guid: 65f427dff5a2cdb4db42a34e18fda61a
+  - enabled: 1
+    path: Assets/Scenes/StoryStart.unity
+    guid: 845af7f2b5fa2df4c879dc1d3616e824
+  - enabled: 1
+    path: Assets/Scenes/StoryEnd.unity
+    guid: 98b8ee58b38a94d43a017ea8f104fb8f
   m_configObjects: {}

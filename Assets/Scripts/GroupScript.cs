@@ -11,6 +11,15 @@ public class GroupScript : MonoBehaviour
 
     private Vector2 lastDirection;
 
+    public bool canInteract = true;
+
+    public static GroupScript instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +43,11 @@ public class GroupScript : MonoBehaviour
         // movement.y = inputY * speed;
 
         // transform.Translate(movement);
+
+        if (!canInteract)
+        {
+            return;
+        }
 
         Vector2 direction = new Vector2(
             inputX,

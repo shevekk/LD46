@@ -14,6 +14,8 @@ public class StoryScript : MonoBehaviour
     public float invisibleTimer = 2f;
     public float alphaSpeed = 0.35f;
 
+    public string nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +66,7 @@ public class StoryScript : MonoBehaviour
 
                     if (currentTextID >= textes.Length)
                     {
-                        UnityEngine.SceneManagement.SceneManager.LoadScene("StartRoom");
+                        UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
                         return;
                     }
                 }
