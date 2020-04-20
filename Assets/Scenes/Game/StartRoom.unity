@@ -1224,12 +1224,12 @@ PrefabInstance:
     - target: {fileID: 18399818169220063, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
       propertyPath: labelUnit
-      value: Go to units room
+      value: Get more units
       objectReference: {fileID: 0}
     - target: {fileID: 18399818169220063, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
       propertyPath: labelHeal
-      value: Go to fountain room
+      value: Get more power
       objectReference: {fileID: 0}
     - target: {fileID: 745181780338606681, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
@@ -1239,12 +1239,12 @@ PrefabInstance:
     - target: {fileID: 3593754540481561174, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
       propertyPath: labelUnit
-      value: Go to units room
+      value: Get more units
       objectReference: {fileID: 0}
     - target: {fileID: 3593754540481561174, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
       propertyPath: labelHeal
-      value: Go to fountain room
+      value: Get more power
       objectReference: {fileID: 0}
     - target: {fileID: 5288512140536413600, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}

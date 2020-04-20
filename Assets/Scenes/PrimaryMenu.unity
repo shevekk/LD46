@@ -404,11 +404,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2085041860, guid: 364983b14e537e6469144e27be005422, type: 3}
-      propertyPath: m_Text
-      value: The world is traversed by great wind currents that may extinguish your
-        flame, to prevent this put at least three troops with shields in the direction
-        of the wind.
+    - target: {fileID: 1643827805, guid: 364983b14e537e6469144e27be005422, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7951926963460388391, guid: 364983b14e537e6469144e27be005422,
         type: 3}
