@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobType: 2
-  viewRange: 6
+  viewRange: 4.5
   speed: 1.5
   attackInterval: 1.9
   attackRange: 0.5

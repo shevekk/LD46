@@ -175,6 +175,9 @@ public class FlameScript : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.tag != "Wind")
+            return;
+
         WindScript wind = collider.gameObject.GetComponent<WindScript>();
         if (wind != null)
         {
@@ -188,6 +191,9 @@ public class FlameScript : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerExit2D(Collider2D collider)
     {
+        if (collider.tag != "Wind")
+            return;
+        
         WindScript wind = collider.gameObject.GetComponent<WindScript>();
         if (this.wind != null)
         {

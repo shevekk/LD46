@@ -432,7 +432,7 @@ MonoBehaviour:
   mobType: 0
   viewRange: 7
   speed: 2
-  attackInterval: 0.55
+  attackInterval: 0.45
   attackRange: 0.5
   strength: 1
 --- !u!50 &1695541820
