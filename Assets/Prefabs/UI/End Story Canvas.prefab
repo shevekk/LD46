@@ -190,7 +190,7 @@ MonoBehaviour:
   - {fileID: 4506367304069367272}
   currentTextID: 0
   fadeCounter: 0
-  visibleTimer: 5
+  visibleTimer: 3.5
   invisibleTimer: 2
   alphaSpeed: 0.3
   nextScene: PrimaryMenu
