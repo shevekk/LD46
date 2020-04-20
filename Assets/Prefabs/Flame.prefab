@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enrollDistance: 0.5
   power: 100
-  minUnitProtect: 5
+  minUnitProtect: 3
   wind: {fileID: 0}
   powerSlider: {fileID: 0}
   powerText: {fileID: 0}

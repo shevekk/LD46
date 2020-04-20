@@ -43,14 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d24ca5bc8962634bb6da4ce61e76798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generationTime: 50
-  windForceMax: 0.1
-  windForceMin: 0.05
-  windSpeedMax: 0.8
-  windSpeedMin: 0.4
+  generationTime: 450
+  windForceMax: 0.35
+  windForceMin: 0.3
+  windSpeedMax: 0.7
+  windSpeedMin: 0.6
   windSizeMax: 60
-  windSizeMin: 20
-  positionOffSet: 200
+  windSizeMin: 40
+  positionOffSet: 80
   windPrefab: {fileID: 3712329481459963718, guid: 058c1f69138cd384f9fa5476b6447b9a,
     type: 3}
   leftIndicatorUI: {fileID: 0}
