@@ -382,9 +382,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitType: 1
   viewRange: 9
+  attackInterval: 0.85
   attackRange: 0.5
   isEnrolled: 0
   waitMove: 0
+  strength: 2
 --- !u!114 &7704332222397629555
 MonoBehaviour:
   m_ObjectHideFlags: 0

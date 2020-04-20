@@ -23,7 +23,7 @@ public class GroupUnitScript : MonoBehaviour
     private bool forceReposition;
     private float forceRepositionTimer;
 
-    private float attackInterval = 0.75f;
+    public float attackInterval = 0.75f;
     private float attackCounter;
     public float attackRange = 0.5f;
 
@@ -36,6 +36,8 @@ public class GroupUnitScript : MonoBehaviour
 
     private WindScript windCollision;
     private Vector3 windDistance;
+
+    public int strength = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +80,7 @@ public class GroupUnitScript : MonoBehaviour
             if (health)
             {
                 SoundEffectsHelper.Instance.MakeDamageSound();
-                health.Hurt(1);
+                health.Hurt(strength);
                 attackCounter = attackInterval;
                 GetComponent<Animator>().SetTrigger("attack");
             }
@@ -168,7 +170,7 @@ public class GroupUnitScript : MonoBehaviour
         groupPoint = point;
 
         forceReposition = true;
-        forceRepositionTimer = 3f;
+        forceRepositionTimer = 2f;
         target = null;
     }
 
