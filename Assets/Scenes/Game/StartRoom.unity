@@ -1301,6 +1301,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base Map
       objectReference: {fileID: 0}
+    - target: {fileID: 5288512140536413631, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5402478132670549281, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
         type: 3}
       propertyPath: m_Camera
@@ -1326,6 +1331,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 43.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8421602806629067213, guid: 17a46e0e206c75b4e80c4eee2d4f6c16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17a46e0e206c75b4e80c4eee2d4f6c16, type: 3}
 --- !u!1001 &8044495762482901859
@@ -1337,11 +1347,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 323385270, guid: 5d33ffaabcb560d4986dd4a899835b8e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 323385270, guid: 5d33ffaabcb560d4986dd4a899835b8e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1194378538, guid: 5d33ffaabcb560d4986dd4a899835b8e, type: 3}
       propertyPath: targetFormation
@@ -1370,6 +1380,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI Interface Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044495763369512367, guid: 5d33ffaabcb560d4986dd4a899835b8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8044495763369512371, guid: 5d33ffaabcb560d4986dd4a899835b8e,
         type: 3}
