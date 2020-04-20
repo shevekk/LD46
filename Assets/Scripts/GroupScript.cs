@@ -65,8 +65,19 @@ public class GroupScript : MonoBehaviour
         // GameObject.FindGameObjectWithTag("Flamme").transform.Translate(direction * speed);
         // GameObject.FindGameObjectWithTag("Group").transform.Find("Group Positions").position = Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("Flamme").transform.position, 1f);
 
+        FlameScript flameScript = GameObject.FindGameObjectWithTag("Flamme").GetComponent<FlameScript>();
+
         Rigidbody2D flameBody = GameObject.FindGameObjectWithTag("Flamme").GetComponent<Rigidbody2D>();
-        flameBody.velocity = direction * speed;
+        Vector2 newVelocity = direction * speed;
+
+        if (flameScript.wind)
+        {
+            newVelocity.x /= 3f;
+            newVelocity += flameScript.wind.speed * 5f;
+        }
+
+        flameBody.velocity = newVelocity;
+
         //GameObject.FindGameObjectWithTag("Flamme").transform.Translate(direction * speed);
         GameObject.FindGameObjectWithTag("Group").transform.Find("Group Positions").position = Vector2.Lerp(transform.position, GameObject.FindGameObjectWithTag("Flamme").transform.position, 1f);
 

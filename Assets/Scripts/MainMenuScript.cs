@@ -25,7 +25,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("StartRoom");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("StoryStart");
     }
 
 

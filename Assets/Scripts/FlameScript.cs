@@ -11,7 +11,8 @@ public class FlameScript : MonoBehaviour
     public float power = 100f;
     
     public int minUnitProtect = 5;
-    private WindScript wind;
+    [HideInInspector]
+    public WindScript wind;
 
     public Slider powerSlider;
     public Text powerText;
