@@ -24,8 +24,8 @@ public class FlameScript : MonoBehaviour
     public int maxWarrior = 10;
     public int maxTanks = 10;
 
-    private int nbWarriors;
-    private int nbTanks;
+    public int nbWarriors;
+    public int nbTanks;
 
     public int endLevelIn = 5;
 

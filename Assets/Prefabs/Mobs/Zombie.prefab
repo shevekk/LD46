@@ -434,7 +434,7 @@ MonoBehaviour:
   speed: 1.75
   attackInterval: 1.9
   attackRange: 0.5
-  strength: 1
+  strength: 2
 --- !u!50 &26808752163869444
 Rigidbody2D:
   serializedVersion: 4
