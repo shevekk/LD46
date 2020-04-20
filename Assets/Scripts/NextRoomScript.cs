@@ -22,11 +22,6 @@ public class NextRoomScript : MonoBehaviour
     {
         type = Random.Range(0, 2);
 
-        if (FlameScript.instance.endLevelIn <= 0)
-        {
-            text.text = labelEnd;
-        }
-
         if (type == 0)
         {
             text.text = labelUnit;
@@ -34,6 +29,11 @@ public class NextRoomScript : MonoBehaviour
         else
         {
             text.text = labelHeal;
+        }
+
+        if (FlameScript.instance.endLevelIn <= 0)
+        {
+            text.text = labelEnd;
         }
 
         text.gameObject.SetActive(false);

@@ -188,10 +188,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textes:
   - {fileID: 4506367304069367272}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   currentTextID: 0
   fadeCounter: 0
   visibleTimer: 5
